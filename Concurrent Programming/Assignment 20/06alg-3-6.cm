@@ -1,0 +1,50 @@
+// File: alg-3-6.cm
+
+// Name: Frank Garcia
+// Date: 11/18/16
+// Assignment: 20
+
+// Following code from alg-3-2.cm to be modified.
+int n = 0;
+int turn = 1;
+const int false = 0;
+const int true = 1;
+int wantr = false;
+int wantq = false;
+
+void r() {
+  int temp, i;
+  for (i = 0; i < 10; i++) {
+    // non-critical section
+    cout << "r.i = " << i << endl;
+    // preprotocol
+    while(wantq) ;
+    wantr = true;
+    // critical section
+    temp = n;
+    n = temp + 1;
+    // postprotocol
+    wantr = false;
+  }
+}
+
+void q() {
+  int temp, i;
+  for (i = 0; i < 10; i++) {
+    // non-critical section
+    cout << "q.i = " << i << endl;
+    // preprotocol
+    while (wantr) ;
+    wantq = true;
+    // critical section
+    temp = n;
+    n = temp + 1;
+    // postprotocol
+    wantq = false;
+  }
+}
+
+void main() {
+  cobegin { r(); q(); }
+  cout << "The value of n is " << n << "\n";
+}

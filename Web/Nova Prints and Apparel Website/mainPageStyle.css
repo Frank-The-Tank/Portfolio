@@ -1,0 +1,43 @@
+body {
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+#backgroundImg {
+    position: absolute;
+    height: 100vh;
+    width: 101vw;
+    margin: 0;
+    padding: 0;
+    z-index: -1;
+}
+
+#mainHolder {
+    position: absolute;
+    top: 5%;
+    left: 5%;
+}
+
+#mainText {
+    color: black;
+    font-family: helvelica, sans-serif;
+    font-weight: lighter;
+    font-size: 35px;
+}
+
+#mainButton {
+    margin: 30px -85px;
+    position: relative;
+    top: 50%;
+    left: 20%;
+    font-size: 35px;
+    text-decoration: underline;
+    color: black;
+    font-family: helvelica, sans-serif;
+}
+
+#mainImg {
+    height: 30%;
+    width: 30%;
+    margin: 10px 45px;
+}

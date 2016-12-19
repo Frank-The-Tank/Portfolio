@@ -1,0 +1,883 @@
+p {
+    padding: calc(3vh - 13px);
+}
+
+h2 {
+    text-transform: uppercase; 
+    font-weight: lighter; 
+    font-size: 20px; 
+    margin: 0; 
+    padding: calc(3vh - 10px); 
+    font-family: "HelveticaNeueW10-25UltL", "HelveticaNeue-UltraLight", "Helvetica Neue UltraLight", "Helvetica Neue", Arial, Helvetica, sans-serif; 
+}
+
+h4 { 
+   font-family: "HelveticaNeueW10-25UltL", "HelveticaNeue-UltraLight", "Helvetica Neue UltraLight", "Helvetica Neue", Arial, Helvetica, sans-serif; 
+   font-weight: lighter; 
+} 
+
+
+a {
+    color: inherit;
+}
+
+#topBar {
+    height: 8vh;
+    width: 100%;
+    background-color: #1F2022;
+}
+
+#novaTitle {
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    top: calc(4vh - 15px);
+    left: 1vw;
+    font-size: 25px;
+    color: #D3D3D3;
+    font-family: "HelveticaNeueW10-25UltL", "HelveticaNeue-UltraLight", "Helvetica Neue UltraLight", "Helvetica Neue", Arial, Helvetica, sans-serif;
+    font-weight: 100;
+    font-stretch: normal;
+    text-transform: uppercase;
+}
+
+#novaLogo {
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    top: calc(4vh - 23px);
+    left: 4vw;
+    height: 45px;
+    width: 45px;
+}
+
+#icons {
+    height: 8vh;
+    width: 20vw;
+    margin-left: 75vw;
+}
+
+.iconStyle {
+    max-width: 4vw;
+    max-height: 4vh;
+    margin: 2.1vh 0.3vw;
+    padding: 0;
+    transition: all .2s ease-in-out;
+    transform: scale(1,1);
+}
+
+.iconStyle:hover {
+    transition: all .2s ease-in-out;
+    transform: scale(1.2,1.2);
+}
+
+#shoppingCartIcon {
+    margin-left: 4.5vw;
+}
+
+#cartText {
+    font-family: "HelveticaNeueW10-25UltL", "HelveticaNeue-UltraLight", "Helvetica Neue UltraLight", "Helvetica Neue", Arial, Helvetica, sans-serif;
+    font-weight: 100;
+    font-size: 18px;
+    position: absolute;
+    margin: 0px;
+    padding: 0px;
+    top: 2.5vh;
+    left: 86vw;
+    color: #D3D3D3
+}
+
+#backgroundPic {
+    position: relative;
+    height: 70vh;
+    width: 100%;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.backgroundImgDimensions {
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+#secondBar {
+    position: absolute;
+    top: 8vh;
+    height: 6vh;
+    width: 100%;
+    background-color: #F4F4F4;
+    opacity: 0.6;
+}
+
+.selectionHolder {
+    text-align: center;
+    height: 6vh;
+}
+
+#bottomBar {
+    position: absolute;
+    top: 72vh;
+    height: 6vh;
+    width: 100%;
+    background-color: #F4F4F4;
+    opacity: 0.6;
+    font-family: "HelveticaNeueW10-25UltL", "HelveticaNeue-UltraLight", "Helvetica Neue UltraLight", "Helvetica Neue", Arial, Helvetica, sans-serif;
+    font-weight: 100;
+}
+
+.clothingSelection {
+    font-family: "HelveticaNeueW10-25UltL", "HelveticaNeue-UltraLight", "Helvetica Neue UltraLight", "Helvetica Neue", Arial, Helvetica, sans-serif;
+    font-weight: 100;
+    text-transform: uppercase;
+    margin-left: 6vw;
+    font-size: 20px;
+    margin-bottom: 0;
+}
+
+.clothingSelection:hover {
+    cursor: pointer;
+    border-bottom: 2px solid black;
+    padding-bottom: 8px;
+}
+
+#topPicksContainer {
+    overflow: hidden;
+    width: calc(100vw - 17px);
+    height: 100%;
+}
+
+.topPicks {
+    top: 80vh;
+    float: left;
+    width: 33.33%;
+    height: 37vh;
+    background-color: white;
+    margin-bottom: 10vh;
+}
+
+.productContentHolder {
+    padding-left: 40px;
+    padding-right: 40px;
+    height: 100%;
+    width: 100%;
+}
+
+.image {
+    height: 120%;
+    width: 75%;
+    margin-left: 12%;
+    -webkit-transform: scale(0.9,0.9);
+    -webkit-filter: drop-shadow(0px 0px 0px rgba(255,255,255,0.80));
+    -webkit-transition: all 0.5s linear;
+    -o-transition: all 0.5s linear;
+    transition: all 0.5s linear;
+}
+
+.image:hover {
+    cursor: pointer;
+}
+
+.name {
+    font-size: 18px;
+    margin-top: 12px;
+    margin-bottom: 0;
+    margin-right: 0;
+    margin-left: 16%;
+    font-family: "HelveticaNeueW10-25UltL", "HelveticaNeue-UltraLight", "Helvetica Neue UltraLight", "Helvetica Neue", Arial, Helvetica, sans-serif;
+    font-weight: 100;
+}
+
+.price {
+    font-size: 18px;
+    font-family: "HelveticaNeueW10-25UltL", "HelveticaNeue-UltraLight", "Helvetica Neue UltraLight", "Helvetica Neue", Arial, Helvetica, sans-serif;
+    float: right;
+    margin-right: 17%;
+    font-weight: 100;
+}
+
+.infoContainer {
+    margin-top: -2vh;
+}
+
+.nextArrow {
+    position: absolute;
+    left: 94vw;
+    top: 47.5vh;
+    transform: scale(0.8,0.8);
+}
+
+#popupHolder {
+    position: absolute;
+    top: 78.5vh;
+    width: 100%;
+    height: 93.5vh;
+    overflow: hidden;
+    visibility: hidden;
+}
+
+#defaultPopup {
+    opacity: 0;
+}
+
+.popupPosition {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0vh;
+    visibility: visible;
+}
+
+/*DESIGNS ADDED FOR LOOKBOOK PAGE*/
+
+#lookbookDisplay {
+    margin-top: -280vh;
+    height: 1150vh;
+}
+
+#lookbookImg {
+    -webkit-transform: scale(0.6,0.6);
+    margin-left: 2%;
+}
+
+/*DESIGNS ADDED FOR PRODUCT POPUP*/
+
+button {
+    cursor: pointer;
+}
+
+.btn {
+    background: 0px;
+    border: 0px;
+    cursor: pointer;
+    font-family: 'HelveticaNeue-Light';
+    font-weight: 100;
+
+}
+
+#productView {
+    background-color: white;
+    padding-left: 14vw;
+    height: 100%;
+}
+
+#backBtn {
+    font-family: "HelveticaNeueW10-25UltL", "HelveticaNeue-UltraLight", "Helvetica Neue UltraLight", "Helvetica Neue", Arial, Helvetica, sans-serif;
+    font-size: 1.2em;
+    position: relative;
+    top: 8vh;
+    margin-left: 1vw;
+    color: #B0B0B0;
+    height: 15px;
+}
+
+#productImg {
+    float: left;
+    margin: 1em;
+    overflow: hidden;
+}
+
+#smallproductImg {
+    float: left;
+    margin-top: 1em;
+    overflow: hidden;
+}
+
+#nameText {
+    font-family: "HelveticaNeue-Light";
+    font-weight: 100;
+    font-size: 2em;
+    text-align: left;
+    padding-left: 0vw;
+    text-decoration: none;
+    border-bottom: 1px solid black;
+}
+
+#colorText {
+    font-family: "HelveticaNeue-Light";
+    font-size: 1.4em;
+    margin-top: 2vh;
+    float: left;
+    margin-left: -0.6vw;
+}
+
+.colorBtn {
+    border: 1px solid black;
+    height: 3.6vh;
+    width: 2vw;
+    margin-top: 3.2vh;
+    margin-left: 1vw
+}
+
+#color1 {
+    background-color: white;
+}
+
+#color2 {
+    background-color: coral;
+}
+
+#sizeTitle {
+    position: relative;
+    font-family: "HelveticaNeue-Light";
+    font-weight: 100;
+    font-size: 1.4em;
+    float: left;
+    padding-top: 5vh;
+}
+
+.sizeButton {
+    border: none;
+    background-color: white;
+    font-family: "HelveticaNeue-Light";
+    font-weight: 100;
+    font-size: 1.2em;
+    position: relative;
+    top: -9.5vh;
+    left: -3.7vw;
+    background-color: white;
+    left: 2vw;
+}
+
+#szMedium {
+
+}
+
+#szLarge {
+
+}
+
+#szXLarge {
+
+}
+
+#priceLabel {
+    font-family: "HelveticaNeue-Light";
+    font-weight: 100;
+    font-size: 1.7em;
+    float: left;
+    margin-top: -1vh;
+}
+
+#addBtn {
+    position: relative;
+    font-family: "HelveticaNeue-Light";
+    font-weight: 100;
+    background-color: white;
+    border: solid 1px #dbdbdb;
+    left: -10vw;
+    top: 7vh;
+    width: 10vw;
+    height: 5vh;
+}
+
+#addBtn:hover {
+    border: solid 1px black;
+}
+
+#descTitle {
+    font-family: "HelveticaNeue-Light";
+    font-weight: 100;
+    font-size: 1.5em;
+    margin-top: 11vh;
+}
+
+ul {
+    position: absolute;
+    margin-top: 0vh;
+    width: 30vw;
+    font-family: "HelveticaNeue-Light";
+    font-weight: 100;
+}
+
+li {
+    padding: 3px;
+}
+
+.chart_white_content {
+        display: none;
+        position: absolute;
+	background-color: white;
+	border: solid 3px black;
+        top: 65%;
+        left: 10%;
+        width: auto;
+        height: auto;
+        padding: 16px;
+        z-index: 1;
+        overflow: auto;
+	color: black;
+	font-family: "HelveticaNeueW10-25UltL", "HelveticaNeue-UltraLight", "Helvetica Neue UltraLight", "Helvetica Neue", Arial, Helvetica, sans-serif;
+	font-weight: lighter;
+}
+
+
+#chartButton {
+	margin-top: 1vh;
+}
+
+#chartButton:hover {
+	text-decoration: none;
+}
+
+.shipping_white_content {
+	background-color: white;
+        border: solid 3px black;
+        display: none;
+        position: absolute;
+        top: 10%;
+        left: 15%;
+        width: 70%;
+        height: 70%;
+        padding: 16px;
+        background-color: white;
+        z-index: 1;
+        overflow: auto;
+	color: black;
+	font-family: Helvetica;
+	font-weight: lighter;
+    }
+
+.shippingImg {
+	-webkit-transform: scale(0.4,0.4);
+	position: relative;
+	margin-left: 20%;
+	margin-bottom: -15vh;
+	margin-top: -10vh;
+}
+
+#srButton {
+    position: absolute;
+    margin-left: 9vw;
+}
+
+#srButton:hover {
+	text-decoration: none;
+}
+
+.productMainImgDim {
+    height: 75vh;
+    width: 30vw;
+    margin-top: 10vh;
+}
+
+.productSecondaryImgDim {
+    height: 17vh;
+    width: 6vw;
+    margin-top: 10vh;
+}
+
+.productSecondaryImgDim:hover { 
+  -webkit-transform: scale(4.0); 
+  -moz-transform: scale(4.0); 
+  -o-transform: scale(4.0); 
+  transform: scale(4.0); 
+  transition: all 0.3s; 
+  -webkit-transition: all 0.3s; 
+  z-index: 2; 
+  left: -7vh; 
+}
+
+#productRightContent {
+    margin-left: 40vw;
+    width: 30vw;
+    height: 51.3vh;
+    margin-top: 10vh;
+}
+
+#productDetails {
+    height: 51.3vh;
+}
+
+#colorSection {
+    height: 6vh;
+    width: 25vw;
+    float: left;
+}
+
+#sizeSection {
+    width: 25vw;
+    float: left;
+}
+
+#priceSection {
+    margin-top: 5vh;
+    height: 6vh;
+    width: 25vw;
+    float: left;
+}
+
+#descriptionSection {
+    height: 20vh;
+    width: 25vw;
+    float: left;
+}
+
+#sizeAndShippingSection {
+    height: 6vh;
+    width: 25vw;
+    float: left;
+    margin-top: 16vh;
+    margin-left: -0.8vw;
+    margin-bottom: 0vh;
+    color: lightblue;
+    font-size: 1em;
+}
+
+#description {
+    position: relative;
+    float: left;
+}
+
+#sizeChoices {
+    position: relative;
+    top: 0.8vh;
+    margin-left: 4vw;
+}
+
+.soldOutDisplay {
+    width: 100%;
+    height: 100%;
+}
+
+.soldOutImg {
+    position: absolute;
+    left: 45%;
+    top: 80vh;
+    margin-left: -11vw;
+    -webkit-transform: scale(0.5,0.5)
+}
+
+.soldOutText {
+    text-align: center;
+    font-family: "HelveticaNeueW10-25UltL", "HelveticaNeue-UltraLight", "Helvetica Neue UltraLight", "Helvetica Neue", Arial, Helvetica, sans-serif;
+    font-weight: 100;
+    font-size: 18px;
+    margin-top: 55vh;
+    left: 1vw;
+}
+
+#mainLogo {
+    position: absolute;
+    -webkit-transform: scale(0.3,0.3);
+    top: -22vh;
+    left: 2vw;
+}
+
+#clickThroughTitle {
+    font-family: helvetica;
+    font-weight: lighter;
+    font-size: 1.6em;
+    position: absolute;
+    top: 38vh;
+    left: 18vw;
+    margin-top: 2vh;
+}
+
+#clickThroughButton {
+    font-family: helvetica;
+    font-weight: lighter;
+    text-align: center;
+    border-bottom: 1px solid black;
+    color: black;
+    font-size: 20px;
+    position: absolute;
+    background: none;
+    border: none;
+    left: 26vw;
+    top: 46vh;
+}
+
+#clickThroughButton:hover {
+    text-decoration: none;
+    color: gray;
+}
+
+#annoyingButton {
+	background-color: none;
+	border: none;
+}
+
+
+/*#productContainers {*/
+    /*overflow: hidden;*/
+    /*width: calc(100vw - 17px);*/
+    /*height: 93vh;*/
+/*}*/
+
+
+
+#clickThroughButton {
+    font-family: helvetica;
+    font-weight: lighter;
+    text-align: center;
+    border-bottom: 1px solid black;
+    color: black;
+    font-size: 20px;
+    position: absolute;
+    background: none;
+    border: none;
+    left: 26vw;
+    top: 46vh;
+}
+
+#clickThroughButton:hover {
+    text-decoration: none;
+  color: gray;
+  -webkit-transform: scale(1.05);
+  -moz-transform: scale(1.05);
+  -o-transform: scale(1.05);
+  transform: scale(1.05);
+  transition: all 0.3s;
+  -webkit-transition: all 0.3s;
+}
+
+#mc-embedded-subscribe-form {
+    width: 50%;
+    margin-left: 23%;
+    margin-top: 0vh;
+    font-family: "HelveticaNeueW10-25UltL", "HelveticaNeue-UltraLight", "Helvetica Neue UltraLight", "Helvetica Neue", Arial, Helvetica, sans-serif;
+    font-weight: lighter;
+}
+
+#subscribeTitle {
+    text-align: center;
+}
+
+#subscribeButton {
+  position: absolute;
+  text-decoration: none;
+  font-family: helvetica;
+  font-weight: lighter;
+  text-align: center;
+  color: black;
+  font-size: 17px;
+  left: 26.6vw;
+  top: 51vh;
+}
+
+#subscribeButton:hover {
+  text-decoration: none;
+  color: gray;
+  -webkit-transform: scale(1.05);
+  -moz-transform: scale(1.05);
+  -o-transform: scale(1.05);
+  transform: scale(1.05);
+  transition: all 0.3s;
+  -webkit-transition: all 0.3s;
+}
+
+.black_overlay{
+        display: none;
+        position: absolute;
+        top: 0%;
+        left: 0%;
+        width: 100%;
+        height: 100%;
+        background-color: black;
+        z-index: 5;
+        -moz-opacity: 0.8;
+        opacity:.80;
+        filter: alpha(opacity=80);
+}
+
+.white_content {
+        display: none;
+        position: absolute;
+        top: 15%;
+        left: 25%;
+        width: 50%;
+        height: 70%;
+        padding: 16px;
+        background-color: white;
+        z-index:1002;
+        overflow: auto;
+}
+
+#mailLogo {
+    -webkit-transform: scale(0.2,0.2);
+    margin-top: -50vh;
+    margin-bottom: -70vh;
+}
+
+
+/*END OF PRODUCT POPUP CSS*/
+
+/*OPTIMIZED FOR PHONES IN PORTRAIT*/
+
+@media only screen and (max-device-width: 480px) and (orientation: portrait){
+	#mainLogo {
+    		position: absolute;
+    		-webkit-transform: scale(0.7,0.7);
+		top: 6vh;
+		left: 13%;
+	}
+
+	#clickThroughTitle {
+    		font-family: helvetica;
+    		font-weight: lighter;
+    		font-size: 3.7em;
+    		position: absolute;
+    		top: 46%;
+    		left: 12%;
+	}
+
+	#clickThroughButton {
+   		font-family: helvetica;
+		font-weight: lighter;
+   		text-align: center;
+   		border-bottom: 1px solid black;
+   		color: black;
+   		font-size: 2.9em;
+   		position: absolute;
+   		background: none;
+   		border: none;
+   		left: 24%;
+    		top: 54%;
+	}
+
+	#mc-embedded-subscribe-form {
+		width: 50%;
+		margin-left: 23%;
+		margin-top: 0vh;
+		font-family: "HelveticaNeueW10-25UltL", "HelveticaNeue-UltraLight", 			"Helvetica Neue UltraLight", "Helvetica Neue", Arial, Helvetica, sans-serif;
+		font-weight: lighter;
+	}
+
+	#subscribeTitle {
+		text-align: center;
+		font-size: 3em;
+	}
+
+	#subscribeButton {
+		position: absolute;
+		text-decoration: none;
+		font-family: helvetica;
+		font-weight: lighter;
+		text-align: center;
+		color: black;
+		font-size: 3em;
+		left: 55%;
+		top: 54%;
+	}
+
+	.black_overlay{
+		display: none;
+        	position: absolute;
+        	top: 0%;
+        	left: 0%;
+       		width: 100%;
+        	height: 100%;
+        	background-color: black;
+        	z-index: 5;
+        	-moz-opacity: 0.8;
+        	opacity:.80;
+       		filter: alpha(opacity=80);
+	}
+
+	.white_content {
+        	display: none;
+        	position: absolute;
+        	top: 25%;
+        	left: 10%;
+        	width: 80%;
+        	height: 35%;
+        	padding: 16px;
+        	background-color: white;
+        	z-index:1002;
+        	overflow: auto;
+	}
+
+}
+
+/*OPTIMIZED FOR PHONES IN LANDSCAPE*/
+
+@media only screen and (max-device-width: 480px) and (orientation: Landscape){
+	#mainLogo {
+    		position: absolute;
+    		-webkit-transform: scale(0.3,0.3);
+    		top: -43%;
+    		left: -5%;
+	}
+
+	#clickThroughTitle {
+    		font-family: helvetica;
+    		font-weight: lighter;
+    		font-size: 1.6em;
+    		position: absolute;
+    		top: 41.5%;
+    		left: 16%;
+	}
+
+	#clickThroughButton {
+   		font-family: helvetica;
+    		font-weight: lighter;
+    		text-align: center;
+    		border-bottom: 1px solid black;
+    		color: black;
+    		font-size: 20px;
+    		position: absolute;
+    		background: none;
+    		border: none;
+    		left: 26%;
+    		top: 48%;
+	}
+
+	#mc-embedded-subscribe-form {
+		width: 50%;
+		margin-left: 23%;
+		margin-top: 0vh;
+		font-family: "HelveticaNeueW10-25UltL", "HelveticaNeue-UltraLight", 			"Helvetica Neue UltraLight", "Helvetica Neue", Arial, Helvetica, sans-serif;
+		font-weight: lighter;
+	}
+
+	#subscribeTitle {
+		text-align: center;
+		font-size: 3em;
+	}
+
+	#subscribeButton {
+		position: absolute;
+		text-decoration: none;
+		font-family: helvetica;
+		font-weight: lighter;
+		text-align: center;
+		color: black;
+		font-size: 18px;
+		left: 26.6%;
+		top: 55%;
+	}
+
+	.black_overlay{
+		display: none;
+        	position: absolute;
+        	top: 0%;
+        	left: 0%;
+       		width: 100%;
+        	height: 100%;
+        	background-color: black;
+        	z-index: 5;
+        	-moz-opacity: 0.8;
+        	opacity:.80;
+       		filter: alpha(opacity=80);
+	}
+
+	.white_content {
+        	display: none;
+        	position: absolute;
+        	top: 3%;
+        	left: 10%;
+        	width: 80%;
+        	height: 82%;
+        	padding: 5px;
+        	background-color: white;
+        	z-index:1002;
+        	overflow: auto;
+	}
+
+}
+
+
+
+
+

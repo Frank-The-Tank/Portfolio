@@ -1,0 +1,64 @@
+// File: dekker.cm
+
+// Name: Frank Garcia
+// Date: 11/23/16
+// Assignment: 21
+
+// Following code from alg-3-2.cm to be modified.
+const int false = 0;
+const int true = 1;
+int n = 0;
+int turn = 1;
+int wantp = false;
+int wantq = false;
+
+void r() {
+  int temp, i;
+  for (i = 0; i < 10; i++) {
+    // non-critical section
+    cout << "r.i = " << i << endl;
+    // preprotocol
+    wantp = true;
+    while (wantp == true) {
+        if (turn == 2) {
+            wantp = false;
+            while (turn != 1);
+            wantp = true;
+        }
+    }
+    // critical section
+    temp = n;
+    n = temp + 1;
+    // postprotocol
+    turn = 2;
+    wantp = false;
+  }
+}
+
+void q() {
+  int temp, i;
+  for (i = 0; i < 10; i++) {
+    // non-critical section
+    cout << "q.i = " << i << endl;
+    // preprotocol
+    wantp = true; 
+    while (wantq == true) {
+        if (turn == 1) {
+            wantq = false;
+            while (turn != 2);
+            wantq = true;
+        }
+    }
+    // critical section
+    temp = n;
+    n = temp + 1;
+    // postprotocol
+    turn = 1;
+    wantq = false; 
+  }
+}
+
+void main() {
+  cobegin { r(); q(); }
+  cout << "The value of n is " << n << "\n";
+}

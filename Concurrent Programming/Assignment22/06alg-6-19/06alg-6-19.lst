@@ -1,0 +1,54 @@
+BACI System: C-- to PCODE Compiler in Java, 09:45  05 Nov 2007
+Source File:  /Users/frankgarcia/Desktop/Class/Concurrent/Assignment22/06alg-6-19/06alg-6-19.cm  Fri Dec 02 16:27:52 2016
+ line  pc
+   1   0  // File: Assignment 22
+   2   0  // Author: Frank Garcia
+   3   0  // Date: 12/2/16
+   4   0  
+   5   0  int buffer[5]; 
+   6   0  int in = 0;
+   7   0  int out = 0;
+   8   0  semaphore notEmpty = 0;
+   9   0  semaphore notFull = 5; 
+  10   0  semaphore mutex = 1;
+  11   0  
+  12   0  void producer() {
+  13   0      int i,d;
+  14   0  
+  15   0      for(i = 1; i < 16; i++) {
+  16  14  
+  17  14      d = 10 * i;
+  18  19  //    wait(notFull);
+  19  19      buffer[in] = d;
+  20  24      in = (in + 1) % 5;
+  21  31  //    signal(notEmpty);
+  22  31      wait(mutex);
+  23  33      cout << "Produced: " << d << endl; 
+  24  37      signal(mutex);
+  25  39  
+  26  39      }
+  27  39  }
+  28  40  
+  29  40  void consumer() {
+  30  41      int i,d; 
+  31  41  
+  32  41      for(i = 1; i < 16; i++) {
+  33  55  
+  34  55  //    wait(notEmpty);
+  35  55      d = buffer[out];
+  36  61      out = (out + 1) % 5;
+  37  68  //    signal(notFull);
+  38  68      wait(mutex);
+  39  70      cout << "Consumed: " << d << endl;
+  40  74      signal(mutex);
+  41  76  
+  42  76      }
+  43  76  }
+  44  77  
+  45  77  void main() {
+  46  79  
+  47  79      cobegin{ producer(); consumer(); };
+  48  87      cout << endl << "The program is Finished!" << endl;
+  49  90  
+  50  90  }
+  51  90  

@@ -1,0 +1,36 @@
+// File: count3.cm
+
+// Name: Frank Garcia
+// Date: 11/10/16
+// Assignment: 18
+
+int n = 0;
+
+void r() {
+  int temp, i;
+  for (i = 0; i < 10; i++) {
+    temp = n;
+    n = temp + 1;
+  }
+}
+
+void q() {
+  int temp, i;
+  for (i = 0; i < 10; i++) {
+    temp = n;
+    n = temp + 1;
+  }
+}
+
+void s() {
+    int temp,  i;
+    for (i = 0; i < 10; i++) {
+        temp = n;
+        n = temp + 1;
+    }
+}
+
+void main() {
+  cobegin { r(); q(); s();}
+  cout << "The value of n is " << n << "\n";
+}

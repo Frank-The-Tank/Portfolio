@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+        <!--Tops-->
+
+        <div ng-switch="background">
+            <div ng-switch-when="default">
+                <div id="topPicksContainer">
+                    <div class="topPicks">
+                        <div class="productContentHolder">
+                            <img class="image" ng-click="$parent.background='toppicksProduct1'" src="image2.jpg" alt=""/>
+                            <div class="infoContainer">
+                                <span class="name">Dulce Tank</span>
+                                <span class="price">$15</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="topPicks">
+                        <div class="productContentHolder">
+                            <img class="image" ng-click="$parent.background='toppicksProduct2'" src="image8.JPG" alt=""/>
+                            <div class="infoContainer">
+                                <span class="name">Lust Tank</span>
+                                <span class="price">$15</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="topPicks">
+                        <div class="productContentHolder">
+                            <img class="image" ng-click="$parent.background='toppicksProduct3'" src="image3.jpg" alt=""/>
+                            <div class="infoContainer">
+                                <span class="name">Sun and Moon Tee</span>
+                                <span class="price">$15</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="topPicks">
+                        <div class="productContentHolder">
+                            <img class="image" ng-click="$parent.background='toppicksProduct4'" src="image5.jpg" alt=""/>
+                            <div class="infoContainer">
+                                <span class="name">Sunburst Tee</span>
+                                <span class="price">$12</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="topPicks">
+                        <div class="productContentHolder">
+                            <img class="image" ng-click="$parent.background='toppicksProduct5'" src="image4.jpg" alt=""/>
+                            <div class="infoContainer">
+                                <span class="name">Opulence 3/4 Tee</span>
+                                <span class="price">$20</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="topPicks">
+                        <div class="productContentHolder">
+                            <img class="image" ng-click="$parent.background='toppicksProduct6'" src="image10.JPG" alt=""/>
+                            <div class="infoContainer">
+                                <span class="name">Hydrangeas Tee</span>
+                                <span class="price">$12</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--Tops Section-->
+
+            <div ng-switch-when="tops">
+                <div id="topPicksContainer">
+                    <div class="topPicks">
+                        <div class="productContentHolder">
+                            <img class="image" ng-click="$parent.background='toppicksProduct1'" src="image2.jpg" alt=""/>
+                            <div class="infoContainer">
+                                <span class="name">Dulce Tank</span>
+                                <span class="price">$15</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="topPicks">
+                        <div class="productContentHolder">
+                            <img class="image" ng-click="$parent.background='toppicksProduct2'" src="image8.jpg" alt=""/>
+                            <div class="infoContainer">
+                                <span class="name">Lust Tank</span>
+                                <span class="price">$15</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="topPicks">
+                        <div class="productContentHolder">
+                            <img class="image" ng-click="$parent.background='toppicksProduct3'" src="image3.jpg" alt=""/>
+                            <div class="infoContainer">
+                                <span class="name">Sun and Moon Tee</span>
+                                <span class="price">$15</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="topPicks">
+                        <div class="productContentHolder">
+                            <img class="image" ng-click="$parent.background='toppicksProduct4'" src="image5.jpg" alt=""/>
+                            <div class="infoContainer">
+                                <span class="name">Sunburst Tee</span>
+                                <span class="price">$12</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="topPicks">
+                        <div class="productContentHolder">
+                            <img class="image" ng-click="$parent.background='toppicksProduct5'" src="image4.jpg" alt=""/>
+                            <div class="infoContainer">
+                                <span class="name">Opulence 3/4 Tee</span>
+                                <span class="price">$20</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="topPicks">
+                        <div class="productContentHolder">
+                            <img class="image" ng-click="$parent.background='toppicksProduct6'" src="image10.jpg" alt=""/>
+                            <div class="infoContainer">
+                                <span class="name">Hydrangeas Tee</span>
+                                <span class="price">$12</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--Lookbook Section-->
+
+            <div ng-switch-when="lookbook">
+                <div id="topPicksContainer">
+                    <div class="soldOutDisplay">
+                        <img class="soldOutImg" src="novaprintslogo.png" alt=""/>
+                        <p class="soldOutText">All items are sold out at the moment</p>
+                    </div>
+                </div>
+            </div>
+
+            <!--Lifestyle Section-->
+
+            <div ng-switch-when="lifestyle">
+                <div id="topPicksContainer">
+                    <div class="soldOutDisplay">
+                        <img class="soldOutImg" src="novaprintslogo.png" alt=""/>
+                        <p class="soldOutText">All items are sold out at the moment</p>
+                    </div>
+                </div>
+            </div>
+
+            <!--Sale Section-->
+
+            <div ng-switch-when="sale">
+                <div id="topPicksContainer">
+                    <div class="soldOutDisplay">
+                        <img class="soldOutImg" src="novaprintslogo.png" alt=""/>
+                        <p class="soldOutText">All items are sold out at the moment</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        </div>
+
+
+
+</body>
+</html>

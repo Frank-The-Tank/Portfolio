@@ -1,0 +1,51 @@
+// File: Assignment 22
+// Author: Frank Garcia
+// Date: 12/2/16
+
+int buffer[5]; 
+int in = 0;
+int out = 0;
+semaphore notEmpty = 0;
+semaphore notFull = 5; 
+semaphore mutex = 1;
+
+void producer() {
+    int i,d;
+
+    for(i = 1; i < 16; i++) {
+
+    d = 10 * i;
+    wait(notFull);
+    buffer[in] = d;
+    in = (in + 1) % 5;
+    signal(notEmpty);
+    wait(mutex);
+    cout << "Produced: " << d << endl; 
+    signal(mutex);
+
+    }
+}
+
+void consumer() {
+    int i,d; 
+
+    for(i = 1; i < 16; i++) {
+
+    wait(notEmpty);
+    d = buffer[out];
+    out = (out + 1) % 5;
+    signal(notFull);
+    wait(mutex);
+    cout << "Consumed: " << d << endl;
+    signal(mutex);
+
+    }
+}
+
+void main() {
+
+    cobegin{ producer(); consumer(); };
+    cout << endl << "The program is Finished!" << endl;
+
+}
+

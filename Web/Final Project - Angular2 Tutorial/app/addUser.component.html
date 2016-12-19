@@ -1,0 +1,45 @@
+<h1>Add a User</h1>
+<br>
+<form class="custom-form" [ngFormModel]="form" (ngSubmit)="save()">
+    <fieldset>
+        <legend>User</legend>
+        <div class="form-group">
+            <label>Name</label>
+            <input [(ngModel)]="user.name" type="text" class="form-control" ngControl="name" #name="ngForm">
+            <div *ngIf="name.touched && name.errors">
+                <div *ngIf="name.errors.required" class="alert alert-danger">Name is required</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label>Email</label>
+            <input [(ngModel)]="user.email" type="text" class="form-control" ngControl="email" #email="ngForm">
+            <div *ngIf="email.touched && email.errors">
+                <div *ngIf="email.errors.nonValidEmail" class="alert alert-danger">Must use valid email address</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label>Phone</label>
+            <input [(ngModel)]="user.phone" type="text" class="form-control">
+        </div>
+    </fieldset>
+    <fieldset ngControlGroup="address">
+        <legend>Address</legend>
+        <div class="form-group">
+            <label>Street</label>
+            <input [(ngModel)]="user.address.street" type="text" class="form-control">
+        </div>
+        <div class="form-group">
+            <label>Suite</label>
+            <input [(ngModel)]="user.address.suite" type="text" class="form-control">
+        </div>
+        <div class="form-group">
+            <label>City</label>
+            <input [(ngModel)]="user.address.city" type="text" class="form-control">
+        </div>
+        <div class="form-group">
+            <label>Zip Code</label>
+            <input [(ngModel)]="user.address.zipcode" type="text" class="form-control">
+        </div>
+    </fieldset>
+    <button [disabled]="!form.valid" class="btn btn-primary">Save</button>
+</form>

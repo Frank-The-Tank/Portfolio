@@ -1,0 +1,83 @@
+BACI System: C-- to PCODE Compiler in Java, 09:45  05 Nov 2007
+Source File:  /Users/frankgarcia/Desktop/Class/Concurrent/Assignment23/06dining/06dining.cm  Thu Dec 08 19:02:53 2016
+ line  pc
+   1   0  // File: dining.cm
+   2   0  // Name: Frank Garcia
+   3   0  // Date: 12/8/16
+   4   0  // Assignment: 24
+   5   0  
+   6   0  monitor Trattoria {
+   7   0     int numInDining = 0;
+   8   0     int forkAcquired[5];
+   9   0     condition OKtoEnter;
+  10   0     condition OKtoPickUp[5];
+  11   0     int i;
+  12   0  
+  13   0     void enterDiningRoom(int philID) {
+  14   1        if (numInDining == 4) {
+  15   5          waitc(OKtoEnter);
+  16   8        }
+  17   8        numInDining++;
+  18  13        cout << "Philosopher " << philID << " entered dining room." << endl;
+  19  18        signalc(OKtoPickUp[philID]);
+  20  22     }
+  21  22  
+  22  22     void exitDiningRoom(int philID) {
+  23  25      if (numInDining > 0) {
+  24  29        numInDining--;
+  25  34        cout << "Philosopher " << philID << " left dining room." << endl;
+  26  39        signalc(OKtoPickUp[philID]);
+  27  43      }
+  28  43     }
+  29  43  
+  30  43     void acquireFork(int philID, int forkID) {
+  31  46        if (forkAcquired[forkID] == 1) {
+  32  53          waitc(OKtoPickUp[forkID]);
+  33  58        }
+  34  58        forkAcquired[forkID] = 1;
+  35  63        cout << "Philosopher " << philID << " picked up fork " << forkID << endl;
+  36  70      }
+  37  70  
+  38  70     void releaseFork(int philID, int forkID) {
+  39  73        forkAcquired[forkID] = 0;
+  40  78        cout << "Philosopher " << philID << " put down fork " << forkID << endl;
+  41  85        signalc(OKtoPickUp[forkID]);
+  42  89     }
+  43  89  
+  44  89     void putSleep (int philID) {
+  45  92        cout << "Philosopher " << philID << " is thinking" << endl;
+  46  97     }
+  47  97  
+  48  97     void putEat (int philID) {
+  49 100        cout << "Philosopher " << philID << " is eating" << endl;
+  50 105     }
+  51 105  
+  52 105     void putThink (int philID) {
+  53 108        cout << "Philosopher " << philID << " is thinking" << endl;
+  54 113     }
+  55 113  
+  56 113     init {
+  57 118        for (i = 0; i < 5; i++) {
+  58 132           forkAcquired[i] = 0;
+  59 137        }
+  60 137     }
+  61 138  }
+  62 139  
+  63 139  void philosopher (int id) {
+  64 139     int i;
+  65 139     for (i = 0; i < 3; i++) {
+  66 153        enterDiningRoom(id);
+  67 157        acquireFork(id, id);
+  68 162        putSleep(id);
+  69 166        acquireFork(id, (id + 1) % 5);
+  70 175        putEat(id);
+  71 179        releaseFork(id, id);
+  72 184        releaseFork(id, (id + 1) % 5);
+  73 193        exitDiningRoom(id);
+  74 197        putThink(id);
+  75 201     }
+  76 201  }
+  77 202  
+  78 202  void main() {
+  79 204     cobegin { philosopher(0); philosopher(1); philosopher(2); philosopher(3); philosopher(4); }
+  80 225  }

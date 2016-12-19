@@ -1,0 +1,80 @@
+// File: dining.cm
+// Name: Frank Garcia
+// Date: 12/8/16
+// Assignment: 24
+
+monitor Trattoria {
+   int numInDining = 0;
+   int forkAcquired[5];
+   condition OKtoEnter;
+   condition OKtoPickUp[5];
+   int i;
+
+   void enterDiningRoom(int philID) {
+      if (numInDining == 4) {
+        waitc(OKtoEnter);
+      }
+      numInDining++;
+      cout << "Philosopher " << philID << " entered dining room." << endl;
+      signalc(OKtoPickUp[philID]);
+   }
+
+   void exitDiningRoom(int philID) {
+    if (numInDining > 0) {
+      numInDining--;
+      cout << "Philosopher " << philID << " left dining room." << endl;
+      signalc(OKtoPickUp[philID]);
+    }
+   }
+
+   void acquireFork(int philID, int forkID) {
+      if (forkAcquired[forkID] == 1) {
+        waitc(OKtoPickUp[forkID]);
+      }
+      forkAcquired[forkID] = 1;
+      cout << "Philosopher " << philID << " picked up fork " << forkID << endl;
+    }
+
+   void releaseFork(int philID, int forkID) {
+      forkAcquired[forkID] = 0;
+      cout << "Philosopher " << philID << " put down fork " << forkID << endl;
+      signalc(OKtoPickUp[forkID]);
+   }
+
+   void putSleep (int philID) {
+      cout << "Philosopher " << philID << " is thinking" << endl;
+   }
+
+   void putEat (int philID) {
+      cout << "Philosopher " << philID << " is eating" << endl;
+   }
+
+   void putThink (int philID) {
+      cout << "Philosopher " << philID << " is thinking" << endl;
+   }
+
+   init {
+      for (i = 0; i < 5; i++) {
+         forkAcquired[i] = 0;
+      }
+   }
+}
+
+void philosopher (int id) {
+   int i;
+   for (i = 0; i < 3; i++) {
+      enterDiningRoom(id);
+      acquireFork(id, id);
+      putSleep(id);
+      acquireFork(id, (id + 1) % 5);
+      putEat(id);
+      releaseFork(id, id);
+      releaseFork(id, (id + 1) % 5);
+      exitDiningRoom(id);
+      putThink(id);
+   }
+}
+
+void main() {
+   cobegin { philosopher(0); philosopher(1); philosopher(2); philosopher(3); philosopher(4); }
+}

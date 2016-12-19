@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html ng-app="mainPageDesktop">
+<head lang="en">
+
+    <meta charset="UTF-8">
+
+    <title>Nova Prints and Apparel</title>
+
+    <!-- Latest compiled and minified CSS (Bootstrap) -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <!-- Optional theme (Bootstrap) -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+    <!--CSS-->
+    <link rel="stylesheet" type="text/css" href="productsPageDisplay.css"/>
+
+</head>
+<body>
+    <div ng-controller="MainPage">
+        <top-bar-display></top-bar-display>
+        <background-pic></background-pic>
+        <second-bar-display></second-bar-display>
+        <bottom-bar-display></bottom-bar-display>
+        <product-gallery></product-gallery>
+        <product-popup></product-popup>
+    </div>
+
+    <script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular.min.js"></script>
+    <script src="mainPageDesktop.js"></script>
+
+
+</body>
+</html>
